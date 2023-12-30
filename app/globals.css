@@ -1,27 +1,118 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
+ 
+@layer base {
   :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --background: #fff;
+    --foreground: #272533;
+
+    --card: #fff;
+    --card-foreground: #272533;
+ 
+    --popover: #fff;
+    --popover-foreground: #272533;
+ 
+    --primary: #E74C3C;
+    --primary-foreground: #fff;
+ 
+    --secondary: #3C5178;
+    --secondary-foreground: #fff;
+ 
+    --muted: #ecf0f1;
+    --muted-foreground: #fff;
+ 
+    --accent: #3C5178;
+    --accent-foreground: #fff;
+ 
+    --destructive: #E74C3C;
+    --destructive-foreground: #fff;
+
+    --border: #ecf0f1;
+    --input: #272533;
+    --ring: #272533;
+ 
+    --radius: 2rem;
   }
+ 
+  /* .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+ 
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+ 
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+ 
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+ 
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+ 
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+ 
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+ 
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+ 
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+  } */
+
+  * {
+    @apply border-border;
+  }
+
+  /* Body */
+  body {
+    @apply bg-background text-foreground text-[16px] md:text-[18px] leading-5;
+  }
+
+  /* Typography */
+  h1, h2, h3, h4, h5, h6,
+  .h1, .h2, .h3, .h4, .h5, .h6 {
+    @apply font-semibold leading-6 mb-4;
+  }
+
+  h1, .h1 {
+    @apply text-[38px] md:text-[44px] lg:text-[48px]
+  }
+  h2, .h2 {
+    @apply text-[32px] md:text-[42px] lg:text-[44px]
+  }
+  h3, .h3 {
+    @apply text-[32px] md:text-[36px] lg:text-[36px]
+  }
+  h4, .h4 {
+    @apply text-[28px] md:text-[32px] lg:text-[32px]
+  }
+  h5, .h5 {
+    @apply text-[24px] md:text-[24px] lg:text-[24px]
+  }
+  h6, .h6 {
+    @apply text-[16px] md:text-[18px] lg:text-[18px]
+  }
+
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  font-family: var(--font-poppins);
+}
+
+
+/* Custom classes */
+/* ************************** */
+@layer utilities {
+
+  /* Container */
+  .container {
+    @apply max-w-[1400px] mx-auto w-full pl-4 pr-4;
+  }
+
 }
