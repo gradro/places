@@ -11,7 +11,7 @@ const NavLinks = () => {
     return (
         <ul role="list" className="flex flex-col md:flex-row align-middle gap-4">
             {navItems.length > 0 && navItems.map((item) => (
-                <li role="presentation">
+                <li role="presentation" key={item.label}>
                     <Link className={`p-2 text-[16px] hover:text-primary duration-200 transition-all md:font-medium focus:text-primary ${pathname === item.path && 'text-primary'}`} role="menuitem" href={item.path}>{item.label}</Link>
                 </li>
             ))}
